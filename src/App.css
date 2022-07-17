@@ -1,0 +1,17 @@
+.bordering {
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.bordering {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #bf9c01;
+    color: white;
+}
