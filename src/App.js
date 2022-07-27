@@ -1,107 +1,136 @@
-import { Component } from "react";
+import { Component, useRef, useState } from "react";
 import "./App.css";
+import getText from "./service/textProvider";
 
-class App extends Component {
-    state = {
-        word: "",
-        text: [
-            "lorem",
-            "ipsum",
-            "dolor",
-            "sit",
-            "amet,",
-            "consectetur",
-            "adipiscing",
-            "elit.",
-            "Nullam",
-            "euismod,",
-            "nisi",
-            "vel",
-            "consectetur",
-            "convallis,",
-            "nisl",
-            "nisi",
-            "consectetur",
-            "nisi,",
-            "eget",
-            "egestas",
-            "nisl",
-            "nisi",
-            "eget",
-            "nisi.",
-        ],
-        currentWord: 0,
-        isStateOk: true,
-        score: 0,
-        hasEnded: false,
+const App = () => {
+    const [text, setText] = useState(getText().split(" "));
+    const [word, setWord] = useState("");
+    const [currentWord, setCurrentWord] = useState(0);
+    const [isStateOk, setIsStateOk] = useState(true);
+    const [score, setScore] = useState(0);
+    const [hasEnded, setHasEnded] = useState(false);
+    const [hasStarted, setHasStarted] = useState(false);
+    const [timer, setTimer] = useState(0);
+
+    const ref = useRef(null);
+
+    let handleStart = () => {
+        setHasStarted(true);
+        setHasEnded(false);
+        ref.current.disabled = false;
+        ref.current.focus();
+        setInterval(() => {
+            setTimer((timer) => timer + 1);
+        }, 1000);
     };
 
-    handleChange = (event) => {
+    let handleChange = (event) => {
         const word = event.target.value;
         if (word.endsWith(" ")) {
-            if (word.trim() !== this.state.text[this.state.currentWord]) {
-                this.setState({ isStateOk: false });
+            if (word.trim() !== text[currentWord]) {
+                setIsStateOk(false);
             } else {
-                this.setState({ isStateOk: true });
-                this.setState({ score: this.state.score + 1 });
-                this.setState({ word: "" });
-                this.setState({ currentWord: this.state.currentWord + 1 });
+                setIsStateOk(true);
+                setScore(score + 1);
+                setWord("");
+                setCurrentWord(currentWord + 1);
             }
         } else {
-            this.setState({ word });
+            if (
+                currentWord === text.length - 1 &&
+                word === text[text.length - 1]
+            ) {
+                ref.current.disabled = true;
+                setHasEnded(true);
+                setHasStarted(true);
+                setWord("");
+                setTimer(0);
+                countScore();
+                clearInterval(timer);
+            }
+            setWord(word);
         }
     };
 
-    render() {
-        return (
-            <div className="container mt-5">
-                <div className="row mt-5">
+    let handleRestart = () => {
+        ref.current.disabled = false;
+        ref.current.focus();
+        setHasEnded(false);
+        setHasStarted(true);
+        setScore(0);
+        setCurrentWord(0);
+        setWord("");
+        //clearInterval(timer);
+    };
+
+    let countScore = () => {};
+
+    return (
+        <div className="container mt-5">
+            <div className="row mt-5">
+                <div className="offset-lg-2 col-lg-8 ">
+                    <h1 className="text-center">RUN </h1>
                     <div className="bordering mt-5 pt-2">
-                        <div className="d-flex align-items-center">
-                            <h1 className="fw-bold me-5">Race me</h1>
-                            <div className="timer ms-5">00:00</div>
-                        </div>
-                        <p className="display-text p-3 text-center">
-                            {this.state.text.map((word, i) => (
+                        {" "}
+                        <p className="display-text p-3">
+                            {text.map((word, i) => (
                                 <span
+                                    key={i}
                                     className={
-                                        this.state.currentWord === i
+                                        currentWord === i
                                             ? "fw-bold text-dark"
                                             : "fw-normal"
-                                    }>
+                                    }
+                                >
                                     {" "}
                                     {word}{" "}
                                 </span>
                             ))}
                         </p>
                         <input
-                            onChange={(event) => this.handleChange(event)}
+                            ref={ref}
+                            onChange={(event) => handleChange(event)}
                             type="text"
-                            value={this.state.word}
-                            className="form-control mb-4"
+                            value={word}
+                            className="form-control mb-4 text-input text-center fw-bold text-dark w-75"
+                            disabled
                         />
+                        {hasEnded && (
+                            <button
+                                className="btn btn-perso w-75"
+                                onClick={() => handleRestart()}
+                            >
+                                RESTART
+                            </button>
+                        )}
+                        {!hasStarted && (
+                            <button
+                                className="btn btn-perso w-75"
+                                onClick={() => handleStart()}
+                            >
+                                START
+                            </button>
+                        )}
                         <div
                             className={`
-                                ${
-                                    this.state.isStateOk
-                                        ? "text-success"
-                                        : "text-danger"
-                                }
-                                text-center fw-bold`}>
-                            {this.state.isStateOk
-                                ? "Good job so far!"
-                                : "Error somewhere!"}
+                                ${isStateOk ? "text-success" : "text-danger"}
+                                text-center fw-bold`}
+                        >
+                            {hasStarted
+                                ? isStateOk
+                                    ? "Good job so far!"
+                                    : "Error ! Review the ongoing word "
+                                : ""}
                         </div>
-                        <div className="score mt-3">
-                            <p className="text-center fw-bold">
-                                Score: {this.state.score}
-                            </p>
-                        </div>
+                        <div className="score mt-3"></div>
                     </div>
                 </div>
+                <div className="col-12 text-center col-lg-1 align-vertical-center mt-4 mt-lg-2">
+                    <h3 className="">{timer}</h3>
+                </div>
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default App;

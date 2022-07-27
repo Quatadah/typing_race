@@ -1,0 +1,3 @@
+export default function getText() {
+    return "lorem ipsum test font"; // this is a normal text used for testing the application, I hope it will work just fine. lorem ipsum test font this is a normal text used for testing the application, I hope it will work just fine. lorem ipsum test font this is a normal text used for testing the application, I hope it will work just fine. lorem ipsum test font this is a normal text used for testing the application, I hope it will work just fine. lorem ipsum test font this is a normal text used for testing the application, I hope it will work just fine.";
+}

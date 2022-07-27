@@ -1,6 +1,15 @@
-.bordering {
-    border: 3px solid white;
-    border-radius: 10px;
+@import url("https://fonts.googleapis.com/css2?family=Karma:wght@300&family=Mochiy+Pop+One&display=swap");
+
+:root {
+    --primary-color: #4a3aac;
+    --secondary-color: #eee;
+    --bg-color: #d3ebf0;
+}
+
+body {
+    font-family: Karma;
+    background-color: var(--secondary-color);
+    color: black;
 }
 
 .bordering {
@@ -8,10 +17,36 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    border-radius: 15px;
 }
 
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #bf9c01;
+h1,
+h2 {
+    font-family: "Mochiy Pop One", "sans-serif";
+    color: var(--primary-color);
+}
+
+.text-input {
+    background-color: var(--secondary-color);
+    border: none;
+}
+
+.text-input:focus {
+    background-color: var(--secondary-color);
+}
+
+.btn-perso {
+    font-family: "Mochiy Pop One", "sans-serif";
+    background-color: #4a3aac;
     color: white;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.btn-perso:hover {
+    border: 2px solid var(--primary-color);
+    color: #4a3aac;
+    background-color: white;
+    margin-bottom: 13px;
 }
