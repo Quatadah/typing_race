@@ -10,6 +10,8 @@ body {
     font-family: Karma;
     background-color: var(--secondary-color);
     color: black;
+    font-size: 1.4rem;
+    max-height: 100vh;
 }
 
 .bordering {
@@ -49,4 +51,12 @@ h2 {
     color: #4a3aac;
     background-color: white;
     margin-bottom: 13px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }

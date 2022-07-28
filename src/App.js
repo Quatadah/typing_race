@@ -1,5 +1,9 @@
-import { Component, useRef, useState } from "react";
+import { Component, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import "./App.css";
+import Progressbar from "./service/Components/ProgressBar";
+import Scoring from "./service/Components/Scoring";
+import Typing from "./service/Components/Typing";
 import getText from "./service/textProvider";
 
 const App = () => {
@@ -11,17 +15,29 @@ const App = () => {
     const [hasEnded, setHasEnded] = useState(false);
     const [hasStarted, setHasStarted] = useState(false);
     const [timer, setTimer] = useState(0);
-
     const ref = useRef(null);
 
+    useEffect(() => {
+        let interval;
+        if (hasStarted) {
+            interval = setInterval(() => {
+                setTimer((timer) => timer + 1);
+            }, 1000);
+        } else {
+            clearInterval(interval);
+        }
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [hasStarted]);
+
     let handleStart = () => {
+        console.log("start");
         setHasStarted(true);
         setHasEnded(false);
         ref.current.disabled = false;
         ref.current.focus();
-        setInterval(() => {
-            setTimer((timer) => timer + 1);
-        }, 1000);
     };
 
     let handleChange = (event) => {
@@ -31,7 +47,6 @@ const App = () => {
                 setIsStateOk(false);
             } else {
                 setIsStateOk(true);
-                setScore(score + 1);
                 setWord("");
                 setCurrentWord(currentWord + 1);
             }
@@ -42,11 +57,10 @@ const App = () => {
             ) {
                 ref.current.disabled = true;
                 setHasEnded(true);
-                setHasStarted(true);
+                setHasStarted(false);
                 setWord("");
                 setTimer(0);
-                countScore();
-                clearInterval(timer);
+                setScore(countScore());
             }
             setWord(word);
         }
@@ -60,74 +74,45 @@ const App = () => {
         setScore(0);
         setCurrentWord(0);
         setWord("");
-        //clearInterval(timer);
     };
 
-    let countScore = () => {};
+    let countScore = () => {
+        let timeInSeconds = timer;
+        let timeInMinutes = timeInSeconds / 60;
+        return Math.ceil(currentWord / timeInMinutes);
+    };
 
     return (
         <div className="container mt-5">
             <div className="row mt-5">
                 <div className="offset-lg-2 col-lg-8 ">
-                    <h1 className="text-center">RUN </h1>
-                    <div className="bordering mt-5 pt-2">
-                        {" "}
-                        <p className="display-text p-3">
-                            {text.map((word, i) => (
-                                <span
-                                    key={i}
-                                    className={
-                                        currentWord === i
-                                            ? "fw-bold text-dark"
-                                            : "fw-normal"
-                                    }
-                                >
-                                    {" "}
-                                    {word}{" "}
-                                </span>
-                            ))}
-                        </p>
-                        <input
-                            ref={ref}
-                            onChange={(event) => handleChange(event)}
-                            type="text"
-                            value={word}
-                            className="form-control mb-4 text-input text-center fw-bold text-dark w-75"
-                            disabled
+                    <h1 className="text-center">RUN</h1>
+                    <div className="bordering mt-1 mt-lg-3 py-2 shadow">
+                        <Progressbar currentWord={currentWord} text={text} />{" "}
+                        <Typing
+                            text={text}
+                            word={word}
+                            currentWord={currentWord}
+                            isStateOk={isStateOk}
+                            hasEnded={hasEnded}
+                            hasStarted={hasStarted}
+                            handleChange={handleChange}
+                            handleStart={handleStart}
+                            handleRestart={handleRestart}
+                            refProp={ref}
                         />
-                        {hasEnded && (
-                            <button
-                                className="btn btn-perso w-75"
-                                onClick={() => handleRestart()}
-                            >
-                                RESTART
-                            </button>
-                        )}
-                        {!hasStarted && (
-                            <button
-                                className="btn btn-perso w-75"
-                                onClick={() => handleStart()}
-                            >
-                                START
-                            </button>
-                        )}
-                        <div
-                            className={`
-                                ${isStateOk ? "text-success" : "text-danger"}
-                                text-center fw-bold`}
-                        >
-                            {hasStarted
-                                ? isStateOk
-                                    ? "Good job so far!"
-                                    : "Error ! Review the ongoing word "
-                                : ""}
-                        </div>
-                        <div className="score mt-3"></div>
                     </div>
                 </div>
-                <div className="col-12 text-center col-lg-1 align-vertical-center mt-4 mt-lg-2">
-                    <h3 className="">{timer}</h3>
+                <div className="col-12 text-center col-lg-2 align-vertical-center mt-4 mt-lg-2 mx-auto">
+                    <h2 className="fw-bold badge bg-warning">
+                        timer : <span className="">{timer}</span>
+                    </h2>
                 </div>
+                <Scoring
+                    score={score}
+                    hasEnded={hasEnded}
+                    handleRestart={handleRestart}
+                />
             </div>
         </div>
     );
