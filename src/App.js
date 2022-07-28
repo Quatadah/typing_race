@@ -1,9 +1,9 @@
 import { Component, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import "./App.css";
-import Progressbar from "./service/Components/ProgressBar";
-import Scoring from "./service/Components/Scoring";
-import Typing from "./service/Components/Typing";
+import Progressbar from "./Components/ProgressBar";
+import Scoring from "./Components/Scoring";
+import Typing from "./Components/Typing";
 import getText from "./service/textProvider";
 
 const App = () => {
