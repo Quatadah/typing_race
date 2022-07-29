@@ -81,6 +81,7 @@ h2 {
 }
 
 .footers {
+    font-family: "KoHo", sans-serif;
     overflow-x: hidden;
     position: fixed;
     bottom: 0;

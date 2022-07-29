@@ -130,7 +130,7 @@ const App = () => {
                     </span>{" "}
                     by{" "}
                     <a href="https://quatadah.vercel.app" target="_blank">
-                        <span className="text-secondary">Quatadah </span>
+                        <span className="">Quatadah </span>
                     </a>
                 </p>
             </div>
