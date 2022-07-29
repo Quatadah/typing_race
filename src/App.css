@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Karma:wght@300&family=Mochiy+Pop+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Odor+Mean+Chey:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap");
+
 :root {
-    --primary-color: #4a3aac;
+    --primary-color: #6b6b6b;
     --secondary-color: #eee;
     --bg-color: #d3ebf0;
 }
@@ -25,8 +28,9 @@ body {
 
 h1,
 h2 {
-    font-family: "Mochiy Pop One", "sans-serif";
+    font-family: "Odor Mean Chey", "sans-serif";
     color: var(--primary-color);
+    font-weight: bold;
 }
 
 .text-input {
@@ -40,17 +44,18 @@ h2 {
 
 .btn-perso {
     /*font-family: "Quicksand", sans-serif;*/
-    font-family: "Mochiy Pop One", "sans-serif";
-    background-color: #4a3aac;
+    font-family: "KoHo", sans-serif;
+    background-color: var(--primary-color);
     color: white;
     font-size: 1rem;
-
+    font-weight: bold;
+    letter-spacing: 2px;
     margin-bottom: 15px;
 }
 
 .btn-perso:hover {
-    border: 2px solid var(--primary-color);
-    color: #4a3aac;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     background-color: white;
     margin-bottom: 13px;
 }
@@ -61,4 +66,23 @@ h2 {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
+}
+
+.timer {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Quicksand", sans-serif;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    width: 4rem;
+    text-align: center;
+    color: white;
+    padding: 5px;
+}
+
+.footers {
+    overflow-x: hidden;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
 }

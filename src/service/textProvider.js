@@ -5,7 +5,7 @@ export default function getText() {
     let randomTextGenerator = new RandomTextGenerator({
         splitter: " ",
         minLength: 20,
-        maxLength: 30,
+        maxLength: 40,
         deepness: 9,
     });
 

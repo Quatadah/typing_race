@@ -74,47 +74,67 @@ const App = () => {
         setScore(0);
         setCurrentWord(0);
         setWord("");
+        setText(getText().split(" "));
     };
 
     let countScore = () => {
         let timeInSeconds = timer;
         let timeInMinutes = timeInSeconds / 60;
-        return Math.ceil(currentWord / timeInMinutes);
+        let numberOfWords =
+            text.map((word) => word.length).reduce((a, b) => a + b) / 5;
+        return Math.ceil(numberOfWords / timeInMinutes);
     };
 
     return (
-        <div className="container mt-5">
-            <div className="row mt-5">
-                <div className="offset-lg-2 col-lg-8 ">
-                    <h1 className="text-center">RUN</h1>
-                    <div className="bordering mt-1 mt-lg-3 py-2 shadow">
-                        <Progressbar currentWord={currentWord} text={text} />{" "}
-                        <Typing
-                            text={text}
-                            word={word}
-                            currentWord={currentWord}
-                            isStateOk={isStateOk}
-                            hasEnded={hasEnded}
-                            hasStarted={hasStarted}
-                            handleChange={handleChange}
-                            handleStart={handleStart}
-                            handleRestart={handleRestart}
-                            refProp={ref}
-                        />
+        <>
+            <div className="container mt-5">
+                <div className="row mt-5">
+                    <div className="offset-lg-2 col-lg-8 ">
+                        <h1 className="text-center">RUN</h1>
+                        <div className="bordering mt-1 mt-lg-3 py-2 shadow">
+                            <Progressbar
+                                currentWord={currentWord}
+                                text={text}
+                            />{" "}
+                            <Typing
+                                text={text}
+                                word={word}
+                                currentWord={currentWord}
+                                isStateOk={isStateOk}
+                                hasEnded={hasEnded}
+                                hasStarted={hasStarted}
+                                handleChange={handleChange}
+                                handleStart={handleStart}
+                                handleRestart={handleRestart}
+                                refProp={ref}
+                            />
+                        </div>
                     </div>
+                    <div className="col-12 text-center col-lg-2 align-vertical-center mt-4 mt-lg-2 mx-auto">
+                        <h2 className="timer">
+                            <span className="">{timer}</span>
+                        </h2>
+                    </div>
+                    <Scoring
+                        score={score}
+                        hasEnded={hasEnded}
+                        handleRestart={handleRestart}
+                    />
                 </div>
-                <div className="col-12 text-center col-lg-2 align-vertical-center mt-4 mt-lg-2 mx-auto">
-                    <h2 className="fw-bold badge bg-warning">
-                        timer : <span className="">{timer}</span>
-                    </h2>
-                </div>
-                <Scoring
-                    score={score}
-                    hasEnded={hasEnded}
-                    handleRestart={handleRestart}
-                />
             </div>
-        </div>
+            <div className="col-12 footers align-vertical-center mt-4">
+                <p className="">
+                    Made with{" "}
+                    <span role="img" aria-label="heart">
+                        ❤️
+                    </span>{" "}
+                    by{" "}
+                    <a href="https://quatadah.vercel.app" target="_blank">
+                        <span className="text-secondary">Quatadah </span>
+                    </a>
+                </p>
+            </div>
+        </>
     );
 };
 
