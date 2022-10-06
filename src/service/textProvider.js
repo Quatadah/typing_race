@@ -1,5 +1,7 @@
 const RandomTextGenerator = require("random-text-generator");
 
+// TODO : Quote generator => Learn to type fast + learn quotes
+
 export default function getText() {
     // Create an instance of the generator. Because you want to generate a text you should set the splitter to " " and use a smaller deepness that the default 40 (to save memory and training time). In this case the deepness says how many of previous words determine the following words.
     let randomTextGenerator = new RandomTextGenerator({
