@@ -4,7 +4,18 @@ import "./App.css";
 import Progressbar from "./Components/ProgressBar";
 import Scoring from "./Components/Scoring";
 import Typing from "./Components/Typing";
+import HighScores from "./Components/HighScores";
 import getText from "./service/textProvider";
+
+const highscores = [12, 30, 40];
+
+//TOP 3 HighSCores
+
+//TODO : a function that search on the local storage and gets the top 3 highscores
+const getHighScores = () => {};
+
+//TODO : a function that replaces the highscore when broken in the local storaage
+const setHighScores = (newHighScore) => {};
 
 const App = () => {
     const [text, setText] = useState(getText().split(" "));
@@ -91,6 +102,7 @@ const App = () => {
                 <div className="row mt-5">
                     <div className="offset-lg-2 col-lg-8 ">
                         <h1 className="text-center">RUN</h1>
+                        <h4 className="text-center">Break your scores</h4>
                         <div className="bordering mt-1 mt-lg-3 py-2 shadow">
                             <Progressbar
                                 currentWord={currentWord}
@@ -120,9 +132,10 @@ const App = () => {
                         hasEnded={hasEnded}
                         handleRestart={handleRestart}
                     />
+                    <HighScores highscores={highscores} />
                 </div>
             </div>
-            <div className="col-12 footers align-vertical-center mt-4">
+            <div className="col-12 footers align-vertical-center mt-5">
                 <p className="">
                     Made with{" "}
                     <span role="img" aria-label="heart">

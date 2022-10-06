@@ -6,7 +6,7 @@ export default function getText() {
         splitter: " ",
         minLength: 20,
         maxLength: 40,
-        deepness: 9,
+        deepness: 20,
     });
 
     // Make a string with a long text. Source: https://en.wikipedia.org/wiki/Nineteen_Eighty-Four.
