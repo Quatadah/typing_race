@@ -6,18 +6,10 @@ import Scoring from "./Components/Scoring";
 import Typing from "./Components/Typing";
 import HighScores from "./Components/HighScores";
 import getText from "./service/textProvider";
-
-const highscores = [12, 30, 40];
-
-//TOP 3 HighSCores
-
-//TODO : a function that search on the local storage and gets the top 3 highscores
-const getHighScores = () => {};
-
-//TODO : a function that replaces the highscore when broken in the local storaage
-const setHighScores = (newHighScore) => {};
+import { hsfrom, hsto } from "./service/highScores";
 
 const App = () => {
+    const [highScores, setHighScores] = useState(hsfrom());
     const [text, setText] = useState(getText().split(" "));
     const [word, setWord] = useState("");
     const [currentWord, setCurrentWord] = useState(0);
@@ -29,6 +21,7 @@ const App = () => {
     const ref = useRef(null);
 
     useEffect(() => {
+        console.log("highScores is : ", highScores);
         let interval;
         if (hasStarted) {
             interval = setInterval(() => {
@@ -44,7 +37,6 @@ const App = () => {
     }, [hasStarted]);
 
     let handleStart = () => {
-        console.log("start");
         setHasStarted(true);
         setHasEnded(false);
         ref.current.disabled = false;
@@ -72,6 +64,8 @@ const App = () => {
                 setWord("");
                 setTimer(0);
                 setScore(countScore());
+                hsto(countScore());
+                setHighScores(hsfrom());
             }
             setWord(word);
         }
@@ -132,10 +126,12 @@ const App = () => {
                         hasEnded={hasEnded}
                         handleRestart={handleRestart}
                     />
-                    <HighScores highscores={highscores} />
+                    {highScores.length && (
+                        <HighScores highscores={highScores} />
+                    )}
                 </div>
             </div>
-            <div className="col-12 footers align-vertical-center mt-5">
+            <div className="col-12 footers">
                 <p className="">
                     Made with{" "}
                     <span role="img" aria-label="heart">
