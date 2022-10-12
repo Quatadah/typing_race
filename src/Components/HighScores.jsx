@@ -2,7 +2,7 @@ import React from "react";
 
 const HighScores = ({ highscores }) => {
     return (
-        <div className="col-12 text-center col-lg-2 align-vertical-center mt-4 mt-lg-2 mx-auto bordering shadow p-2">
+        <div className="col-12 text-center align-vertical-center mt-4 mt-lg-2 mx-auto bordering shadow p-2">
             <h2 className="highScores">
                 <span className="">High Scores</span>
             </h2>

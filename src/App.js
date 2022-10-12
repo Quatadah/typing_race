@@ -92,7 +92,7 @@ const App = () => {
 
     return (
         <>
-            <div className="container mt-5">
+            <div className="container mt-5 ">
                 <div className="row mt-5">
                     <div className="offset-lg-2 col-lg-8 ">
                         <h1 className="text-center">RUN</h1>
@@ -116,19 +116,21 @@ const App = () => {
                             />
                         </div>
                     </div>
-                    <div className="col-12 text-center col-lg-2 align-vertical-center mt-4 mt-lg-2 mx-auto">
+                    <div className="col-12 text-center col-lg-2 align-vertical-center mt-4 pt-lg-5 mt-lg-2 mx-auto">
                         <h2 className="timer">
                             <span className="">{timer}</span>
                         </h2>
+                        <div className="p-3">
+                            {highScores.length > 0 && (
+                                <HighScores highscores={highScores} />
+                            )}
+                        </div>
                     </div>
                     <Scoring
                         score={score}
                         hasEnded={hasEnded}
                         handleRestart={handleRestart}
                     />
-                    {highScores.length && (
-                        <HighScores highscores={highScores} />
-                    )}
                 </div>
             </div>
             <div className="col-12 footers">
