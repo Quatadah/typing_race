@@ -1,9 +1,9 @@
-import { Component, useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Progressbar from "./Components/ProgressBar";
 import Scoring from "./Components/Scoring";
 import Typing from "./Components/Typing";
+import Footer from "./Components/Footer";
 import HighScores from "./Components/HighScores";
 import getText from "./service/textProvider";
 import { hsfrom, hsto } from "./service/highScores";
@@ -145,18 +145,7 @@ const App = () => {
                     />
                 </div>
             </div>
-            <div className="col-12 footers">
-                <p className="">
-                    Made with{" "}
-                    <span role="img" aria-label="heart">
-                        ❤️
-                    </span>{" "}
-                    by{" "}
-                    <a href="https://quatadah.vercel.app" target="_blank">
-                        <span className="">Quatadah </span>
-                    </a>
-                </p>
-            </div>
+            <Footer />
         </>
     );
 };
