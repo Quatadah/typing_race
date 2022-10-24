@@ -7,10 +7,12 @@ import Typing from "./Components/Typing";
 import HighScores from "./Components/HighScores";
 import getText from "./service/textProvider";
 import { hsfrom, hsto } from "./service/highScores";
+import NavBar from "./Components/NavBar";
 
 const App = () => {
+    const [language, setLanguage] = useState("English");
     const [highScores, setHighScores] = useState(hsfrom());
-    const [text, setText] = useState(getText().split(" "));
+    const [text, setText] = useState(getText(language).split(" "));
     const [word, setWord] = useState("");
     const [currentWord, setCurrentWord] = useState(0);
     const [isStateOk, setIsStateOk] = useState(true);
@@ -19,6 +21,15 @@ const App = () => {
     const [hasStarted, setHasStarted] = useState(false);
     const [timer, setTimer] = useState(0);
     const ref = useRef(null);
+
+    useEffect(() => {
+        setText(getText(language).split(" "));
+        setHasStarted(false);
+        setTimer(0);
+        setIsStateOk(true);
+        setCurrentWord(0);
+        setWord("");
+    }, [language]);
 
     useEffect(() => {
         console.log("highScores is : ", highScores);
@@ -34,7 +45,7 @@ const App = () => {
         return () => {
             clearInterval(interval);
         };
-    }, [hasStarted]);
+    }, [hasStarted, language]);
 
     let handleStart = () => {
         setHasStarted(true);
@@ -79,23 +90,24 @@ const App = () => {
         setScore(0);
         setCurrentWord(0);
         setWord("");
-        setText(getText().split(" "));
+        setText(getText(language).split(" "));
     };
 
     let countScore = () => {
         let timeInSeconds = timer;
         let timeInMinutes = timeInSeconds / 60;
         let numberOfWords =
-            text.map((word) => word.length).reduce((a, b) => a + b) / 5;
-        return Math.ceil(numberOfWords / timeInMinutes);
+            text.map((word) => word.length).reduce((a, b) => a + b) / 4;
+        return Math.round(numberOfWords / timeInMinutes);
     };
 
     return (
         <>
+            <NavBar language={language} setLanguage={setLanguage} />
             <div className="container mt-5 ">
                 <div className="row mt-5">
                     <div className="offset-lg-2 col-lg-8 ">
-                        <h1 className="text-center">RUN</h1>
+                        <h1 className="text-center">Typing race</h1>
                         <h4 className="text-center">Break your scores</h4>
                         <div className="bordering mt-1 mt-lg-3 py-2 shadow">
                             <Progressbar

@@ -1,38 +1,89 @@
-[
-    {
-        "text": "Can I get you anything else? David asked. It was a question he asked a hundred times a day and he always received the same answer. It had become such an ingrained part of his daily routine that he had to step back and actively think when he heard the little girl's reply. Nobody had before answered the question the way that she did, and David didn't know how he should respond."
-    },
-    {
-        "text": "Nobody really understood Kevin. It wasn't that he was super strange or difficult. It was more that there wasn't enough there that anyone wanted to take the time to understand him. This was a shame as Kevin had many of the answers to the important questions most people who knew him had. It was even more of a shame that they'd refuse to listen even if Kevin offered to give them the answers. So, Kevin remained silent, misunderstood, and kept those important answers to life to himself."
-    },
-    {
-        "text": "Finding the truth wouldn't be easy, that's for sure. Then there was the question of whether or not Jane really wanted to know the truth. That's the thing that bothered her most. It wasn't the difficulty of actually finding out what happened that was the obstacle, but having to live with that information once it was found."
-    },
-    {
-        "text": "Finding the truth wouldn't be easy, that's for sure. Then there was the question of whether or not Jane really wanted to know the truth. That's the thing that bothered her most. It wasn't the difficulty of actually finding out what happened that was the obstacle, but having to live with that information once it was found."
-    },
-    {
-        "text": "She had come to the conclusion that you could tell a lot about a person by their ears. The way they stuck out and the size of the earlobes could give you wonderful insights into the person. Of course, she couldn't scientifically prove any of this, but that didn't matter to her. Before anything else, she would size up the ears of the person she was talking to."
-    },
-    {
-        "text": "There were little things that she simply could not stand. The sound of someone tapping their nails on the table. A person chewing with their mouth open. Another human imposing themselves into her space. She couldn't stand any of these things, but none of them compared to the number one thing she couldn't stand which topped all of them combined."
-    },
-    {
-        "text": "The river slowly meandered through the open space. It had hidden secrets that it didn't want to reveal. It had a well-planned strategy to appear calm, inviting, and appealing. That's how the river lured her unknowing victims to her water's edge."
-    },
-    {
-        "text": "He took a sip of the drink. He wasn't sure whether he liked it or not, but at this moment it didn't matter. She had made it especially for him so he would have forced it down even if he had absolutely hated it. That's simply the way things worked. She made him a new-fangled drink each day and he took a sip of it and smiled, saying it was excellent."
-    },
-    {
-        "text": "There was a time when this wouldn't have bothered her. The fact that it did actually bother her bothered her even more. What had changed in her life that such a small thing could annoy her so much for the entire day? She knew it was ridiculous that she even took notice of it, yet she was still obsessing over it as she tried to fall asleep."
-    },
-    {
-        "text": "Don't forget that gifts often come with costs that go beyond their purchase price. When you purchase a child the latest smartphone, you're also committing to a monthly phone bill. When you purchase the latest gaming system, you're likely not going to be satisfied with the games that come with it for long and want to purchase new titles to play. When you buy gifts it's important to remember that some come with additional costs down the road that can be much more expensive than the initial gift itself."
-    },
-    {
-        "text": "They decided to find the end of the rainbow. While they hoped they would find a pot of gold, neither of them truly believed that the mythical pot would actually be there. Nor did they believe they could actually find the end of the rainbow. Still, it seemed like a fun activity for the day, and pictures of them chasing rainbows would look great on their Instagram accounts. They would have never believed they would actually find the end of a rainbow, and when they did, what they actually found there."
-    },
-    {
-        "text": "The fog was as thick as pea soup. This was a problem. Gary was driving but couldn't see a thing in front of him. He knew he should stop, but the road was narrow so if he did, it would be right in the center of the road. He was sure that another car would end up rear-ending him, so he continued forward despite the lack of visibility. This was an unwise move."
-    }
-]
+{
+    "English": [
+        {
+            "text": "As populations grow and natural environments become degraded, ensuring everyone has safe and sufficient water supplies is becoming increasingly challenging. A major part of the solution is to produce less pollution and improve the way we manage wastewater."
+        },
+        {
+            "text": "The United Nations estimates that 2.4 billion people lack access to safe drinking water, and 4.5 billion people lack access to adequate sanitation. The World Health Organization (WHO) estimates that 842,000 people die each year from water-related diseases, and that 80% of these deaths are children under the age of five."
+        },
+        {
+            "text": "Weather describes the conditions outside right now in a specific place. For example, if you see that it’s raining outside right now, that’s a way to describe today’s weather. Rain, snow, wind, hurricanes, tornadoes these are all weather events."
+        },
+        {
+            "text": "You must stay safe and keep others safe too. This pandemic can go away with teamwork only not individual work. We must protect everyone around us as well as ourselves. Firstly, take the vaccine when you get the chance."
+        },
+        {
+            "text": "Follow the local guidelines and get it as soon as possible. Further, maintain physical distancing with others. At least 1 metre of distance must be maintained from others. Even if you don’t feel they are sick, maintain the distance."
+        },
+        {
+            "text": "Avoid going in between crowds and close contact. Further, wear a mask that fits you properly. It will come into use when you cannot distance yourself physically or the space is not well ventilated."
+        },
+        {
+            "text": "Just like revolution, the earth also rotates on its axis within 24 hours that we refer to as a solar day. When rotation is happening, some of the places on the planet face the sun while the others hide from it."
+        },
+        {
+            "text": "The rocks make up the earth that has been around for billions of years. Similarly, water also makes up the earth. In fact, water covers 70% of the surface. It includes the oceans that you see, the rivers, the sea and more."
+        },
+        {
+            "text": "Cigarettes have a major impact on the lungs. Around a third of all cancer cases happen due to smoking. For instance, it can affect breathing and causes shortness of breath and coughing."
+        },
+        {
+            "text": "Time can be used to make money but money cannot be used to make more time. Thus, all the money in the world does not matter if you do not have enough time. Do you know the difference between successful people and failures?"
+        }
+    ],
+    "French": [
+        {
+            "text": "Alors que les populations augmentent et que les environnements naturels se dégradent, s'assurer que tout le monde ait des approvisionnements en eau sûrs et suffisants devient de plus en plus difficile. Une grande partie de la solution consiste à produire moins de pollution et à améliorer la façon dont nous gérons les eaux usées."
+        },
+        {
+            "text": "Les Nations Unies estiment que 2,4 milliards de personnes n'ont pas accès à une eau potable sûre, et 4,5 milliards de personnes n'ont pas accès à un assainissement adéquat. L'Organisation mondiale de la santé (OMS) estime qu'environ 842 000 personnes meurent chaque année de maladies liées à l'eau, et que 80% de ces décès sont des enfants de moins de cinq ans."
+        },
+        {
+            "text": "La météo décrit les conditions à l'extérieur en ce moment dans un endroit spécifique. Par exemple, si vous voyez qu'il pleut dehors en ce moment, c'est une façon de décrire la météo d'aujourd'hui. Pluie, neige, vent, ouragans, tornades, ce sont tous des événements météorologiques."
+        },
+        {
+            "text": "Vous devez rester en sécurité et protéger les autres aussi. Cette pandémie peut disparaître avec l'équipe seulement, pas le travail individuel. Nous devons protéger tout le monde autour de nous ainsi que nous-mêmes. Premièrement, prenez le vaccin dès que vous en avez l'occasion."
+        },
+        {
+            "text": "Suivez les directives locales et obtenez-le dès que possible. Ensuite, maintenez la distanciation physique avec les autres. Au moins 1 mètre de distance doit être maintenu des autres. Même si vous ne vous sentez pas malade, maintenez la distance."
+        },
+        {
+            "text": "Évitez de vous rendre dans les foules et les contacts rapprochés. Ensuite, portez un masque qui vous convient correctement. Il sera utile lorsque vous ne pourrez pas vous éloigner physiquement ou lorsque l'espace n'est pas bien ventilé."
+        },
+        {
+            "text": "Comme la révolution, la terre tourne également autour de son axe en 24 heures que nous appelons une journée solaire. Lorsque la rotation a lieu, certains endroits de la planète sont face au soleil, tandis que d'autres se cachent de lui."
+        },
+        {
+            "text": "Les roches constituent la terre qui existe depuis des milliards d'années. De même, l'eau fait également partie de la terre. En fait, l'eau couvre 70% de la surface. Il comprend les océans que vous voyez, les rivières, la mer et plus encore."
+        },
+        {
+            "text": "Les cigarettes ont un impact majeur sur les poumons. Environ un tiers de tous les cas de cancer surviennent en raison du tabagisme. Par exemple, il peut affecter la respiration. Il provoque des essoufflements et des toux."
+        },
+        {
+            "text": "Le temps peut être utilisé pour gagner de l'argent, mais l'argent ne peut pas être utilisé pour gagner plus de temps. Ainsi, tout l'argent du monde n'a pas d'importance si vous n'avez pas assez de temps. Savez-vous la différence entre les personnes réussies et les échecs?"
+        }
+    ],
+    "Arabic": [
+        {
+            "text": "في حين يزداد عدد السكان ويتدهور البيئات الطبيعية ، فإن التأكد من أن لديكم موارد مائية آمنة وكافية للجميع أصبح أكثر صعوبة. جزء كبير من الحل هو إنتاج أقل من الأزبال وتحسين طريقة إدارة المياه الخاضعة للتصريف."
+        },
+        {
+            "text": "تقدر الأمم المتحدة أن 2.4 مليار شخص لا يملكون مياه شرب آمنة ، و 4.5 مليار شخص لا يملكون مياه صرف صحي مناسب. تقدر منظمة الصحة العالمية أن حوالي 842000 شخص يموتون كل عام بسبب أمراض متعلقة بالماء ، وأن 80٪ من هذه الوفيات هي أطفال تحت سن الخامسة."
+        },
+        {
+            "text": "يصف الطقس الظروف خارجها في هذه اللحظة في مكان محدد. على سبيل المثال ، إذا رأيت أنه يمطر خارج في هذه اللحظة ، فهذا هو طريقة لوصف الطقس اليوم. الأمطار والثلوج والرياح والعواصف الرعدية والعواصف الرملية ، كلها أحداث طقسية."
+        },
+        {
+            "text": "يجب أن تبقى آمنًا وتحمي الآخرين أيضًا. يمكن أن تختفي هذه الجائحة مع الفريق فقط ، وليس العمل الفردي. يجب علينا حماية كل شخص حولنا ونفسنا. أولاً ، احصل على اللقاح بمجرد الفرصة."
+        },
+        {
+            "text": "اتبع الاتجاهات المحلية واحصل عليه بمجرد الفرصة. بعد ذلك ، احتفظ بالمسافة البدنية مع الآخرين. يجب الحفاظ على مسافة لا تقل عن متر من الآخرين. حتى لو لم تشعر بالأمراض ، فاحتفظ بالمسافة."
+        },
+        {
+            "text": "تجنب الذهاب إلى الأموال والاتصالات القريبة. بعد ذلك ، ارتدِ قناعًا يناسبك بشكل صحيح. سيكون مفيدًا عندما لا يمكنك الابتعاد بشكل فعال أو عندما لا يكون الفضاء جيدًا معتدلاً."
+        },
+        {
+            "text": "كما في الثورة ، تدور الأرض أيضًا حول محورها في 24 ساعة ما نسميه يوم طبيعي. عندما يحدث الشمس ، يتم تحريك الأرض حول محورها. يتم تحريك الأرض حول الشمس في 365 يومًا ما نسميه سنة طبيعية."
+        }
+    ]
+}

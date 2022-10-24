@@ -13,7 +13,7 @@ const Typing = ({
 }) => {
     return (
         <>
-            <p className="display-text p-3">
+            <p className="display-text p-3 text-justify">
                 {text.map((word, i) => (
                     <span
                         key={i}

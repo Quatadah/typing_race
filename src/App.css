@@ -86,3 +86,26 @@ h2 {
     margin-top: 10px;
     text-align: center;
 }
+
+.my-navbar {
+    background-color: #e3e3e3;
+}
+
+.my-navbar select {
+    background-color: #e3e3e3;
+    border: none;
+    font-family: "KoHo", sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 5px;
+}
+
+.my-navbar option[value="English"] {
+    background-image: url("assets/united-kingdom-flag-icon.svg");
+}
+.my-navbar option[value="French"] {
+    background-image: url("assets/france-flag-icon.svg");
+}
+.my-navbar option[value="Arabic"] {
+    background-image: url("assets/morocco-flag-icon.svg");
+}
